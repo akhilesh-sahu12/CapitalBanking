@@ -1,0 +1,30 @@
+bank database-> 
+
+1. Create database:
+   use bank;
+   
+2. create a collection
+   db.createCollection("bankCustomers");
+
+3. add record or document
+   db.bankCustomers.insertOne({ "customerId": 101, "customerName": "Harsha", "email": "harsha@gmail.com", "AccountNo":9898989898101});
+  
+4. add multiple records or documents
+  db.bankCustomers.insertMany([{ "customerId": 102, "customerName": "Pasha", "email": "pasha@gmail.com", "AccountNo":"9898989898102", "currentBalance": 45000, "location": "Hydrabad" },
+  { "customerId": 103, "customerName": "Aman", "email": "aman@gmail.com", "AccountNo": "9898989898103", "currentBalance": 55000, "location": "Mumbai"}]);
+
+5. show all documents
+   db.bankCustomers.find();
+
+6. Display a particular record
+   db.bankCustomers.find({ "customerId": 102, "customerName": "Pasha", "email": "pasha@gmail.com", "AccountNo":"9898989898102", "currentBalance": 45000, "location": "Hydrabad" });
+ 
+
+7. Update a single document or record
+  db.bankCustomers.updateOne({ customerId: 102 }, { $set : { location: "Hyd"}});
+
+8. Delete a single document or record
+  db.bankCustomers.deleteOne( { customerId: 102} );
+
+
+db.bankCustomers.deleteOne( { "_id" : ObjectId("632838baa21dc45e0434bc3d") } );
